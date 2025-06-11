@@ -1,17 +1,17 @@
 pipeline {
-  agent {
-    docker { image 'python:latest' }
-  }
-  stages {
-    stage('Test') {
-      steps {
-        sh 'python --version'
-        sh '''
-          echo 'print("hello world")' > hello.py
-          python hello.py
-        '''
-      }
-      
+    agent any
+    stages {
+        stage('print hello world') {
+            steps {
+                sh 'echo "hello world"'
+            }
+        }
+        stage('print python version') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
-  }
 }
+  
+  
