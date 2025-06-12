@@ -1,17 +1,31 @@
-pipeline {
+// pipeline {
+//     agent any
+//     stages {
+//         stage('print hello world') {
+//             steps {
+//                 sh 'echo "hello world"'
+//             }
+//         }
+//         stage('print python version') {
+//             steps {
+//                 sh 'python3 --version'
+//             }
+//         }
+//     }
+// }
+
+pipeline{
     agent any
-    stages {
-        stage('print hello world') {
-            steps {
+    stages{
+        stage('print hello world'){
+            steps{
                 sh 'echo "hello world"'
             }
         }
-        stage('print python version') {
-            steps {
+        stage('check python version'){
+            steps{
                 sh 'python3 --version'
             }
         }
     }
 }
-  
-  
